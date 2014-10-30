@@ -13,11 +13,13 @@ npm install less --global
 
 ###Usage 
 ```
-node less-watch-compiler.js FOLDER_TO_WATCH FOLDER_TO_OUTPUT
+node less-watch-compiler.js FOLDER_TO_WATCH FOLDER_TO_OUTPUT [bootstrap]
 ```
 ###Example 
 `"node less-watch-compiler.js less css"` will watch the `./less` folder and compile the LESS CSS files into `./css` when they are added/changed.
-   
+
+* If `boostrap` parameter is specified then only `style.less` file will be compiled into `style.css` file. 
+  This is handy for Bootstrap, as all the less files are imported into the single `style.less` file.
 * This script only compiles files with `.less` extension. More file extensions can be added by modifying the `allowedExtensions` array.
 * Files that start with underscores `_style.css` or period `.style.css` are ignored. This behavior can be changed in the `filterFiles()` function.
 
